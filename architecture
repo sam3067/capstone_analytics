@@ -1,0 +1,31 @@
+dataset.csv (Raw Time-Series Data for 14 Parking Lots)
+           |
+           v
+[Data Preprocessing]
+ - Convert fields to numeric
+ - Create occupancy rate
+ - Map traffic and vehicle type
+ - Create timestamps
+           |
+           v
+[Model 1: Linear Pricing]
+ - Price = Base + α × (Occupancy / Capacity)
+           |
+           v
+[Model 2: Demand-Based Pricing]
+ - Demand = α*(OccupancyRate) + β*Queue - γ*Traffic + δ*SpecialDay + ε*VehicleTypeWeight
+ - Price = Base × (1 + λ × NormalizedDemand)
+           |
+           v
+[Model 3: Competitive Pricing]
+ - Compare nearby lots (within 1km)
+ - Adjust price if competitors are cheaper or more expensive
+           |
+           v
+[Simulated Real-Time Streaming]
+ - Loop through time steps to mimic live feed
+ - Show latest price using Model 3
+           |
+           v
+[Bokeh Visualization]
+ - Plot Model 1, 2, and 3 prices over time for each parking lot
